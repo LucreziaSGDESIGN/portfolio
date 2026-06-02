@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build design systems that scale across products, teams, and markets. Learn about design tokens, component architecture, governance, and enterprise-grade design system practices.">
+<meta name="keywords" content="design systems, design tokens, component library, design governance, scalable design, design at scale, design patterns, design infrastructure">
+<meta name="author" content="Lucrezia Spapperi Gestri">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Design Systems That Scale">
+<meta property="og:description" content="How to build design systems that work across products, teams, and markets at enterprise scale. From tokens to governance.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lucreziasdesign.github.io/portfolio/blog/design-systems-that-scale/">
+<meta name="twitter:card" content="summary_large_image">
+<title>Design Systems That Scale | Lucrezia Gestri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Archivo:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://lucreziasdesign.github.io/portfolio/blog/design-systems-that-scale/">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  background: #fafafa;
+  line-height: 1.8;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #f0f0f0;
+}
+.nav a { color: #1a1a1a; text-decoration: none; font-weight: 500; font-size: 13px; margin-left: 2.5rem; letter-spacing: 0.5px; transition: all 0.3s ease; }
+.nav a:hover { opacity: 0.6; }
+.logo { font-family: 'Unbounded'; font-weight: 700; font-size: 16px; letter-spacing: -1px; }
+.article-wrapper { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+.article-header { margin-bottom: 3rem; }
+.article-tag {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+h1 {
+  font-family: 'Unbounded';
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.article-meta {
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 0.3px;
+}
+.article-meta span { margin-right: 1.5rem; }
+.article-intro {
+  font-size: 18px;
+  color: #666;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+figure {
+  margin: 3rem 0;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+figcaption {
+  font-size: 13px;
+  color: #999;
+  margin-top: 0.8rem;
+}
+.article-content {
+  font-size: 16px;
+  color: #1a1a1a;
+  line-height: 1.8;
+}
+.article-content h2 {
+  font-family: 'Unbounded';
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.article-content h3 {
+  font-family: 'Unbounded';
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.article-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.article-content ul, .article-content ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+.article-content li {
+  margin-bottom: 0.6rem;
+}
+.article-content strong { font-weight: 600; }
+.article-content em { font-style: italic; }
+.highlight {
+  background: #f5f5f5;
+  padding: 2rem;
+  border-left: 4px solid #1a1a1a;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+.highlight p { margin: 0; }
+.cta-section {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 3rem;
+  text-align: center;
+}
+.cta-section p { margin-bottom: 1rem; }
+.cta-link {
+  display: inline-block;
+  background: #1a1a1a;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.cta-link:hover { opacity: 0.8; }
+.related-articles {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e0e0e0;
+}
+.related-articles h3 {
+  font-family: 'Unbounded';
+  font-size: 22px;
+  margin-bottom: 1.5rem;
+}
+.related-links {
+  display: grid;
+  gap: 1rem;
+}
+.related-links a {
+  padding: 1.2rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+.related-links a:hover {
+  border-color: #1a1a1a;
+  background: #fafafa;
+}
+footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 3rem 5%;
+  text-align: center;
+  margin-top: 4rem;
+}
+footer p { margin-bottom: 1rem; font-size: 14px; }
+footer a { color: white; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .nav { flex-direction: column; gap: 1rem; padding: 1.5rem 5%; }
+  .nav a { margin-left: 0; }
+  .article-wrapper { padding: 2rem 5%; }
+  h1 { font-size: 32px; }
+  .article-content h2 { font-size: 26px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Design Systems That Scale",
+  "description": "How to build design systems that work across products, teams, and markets at enterprise scale.",
+  "image": "https://lucreziasdesign.github.io/portfolio/assets/portrait.png",
+  "datePublished": "2026-04-15",
+  "author": {
+    "@type": "Person",
+    "name": "Lucrezia Spapperi Gestri",
+    "url": "https://lucreziasdesign.github.io/portfolio/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lucreziasdesign.github.io/portfolio/blog/design-systems-that-scale/"
+  }
+}
+</script>
+</head>
+<body>
+  <div class="nav">
+    <a href="../../" class="logo">LSG/DESIGN/BLOG</a>
+    <div>
+      <a href="../../#work">Work</a>
+      <a href="../../#about">About</a>
+      <a href="../">Blog</a>
+      <a href="../../#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="article-wrapper">
+    <article>
+      <div class="article-header">
+        <span class="article-tag">Design Systems</span>
+        <h1>Design Systems That Scale</h1>
+        <div class="article-meta">
+          <span>April 15, 2026</span>
+          <span>7 min read</span>
+        </div>
+        <p class="article-intro">A design system isn't just a component library. It's a shared language between design and engineering, a source of truth for consistency, and the backbone of scalable product development. But building one that actually scales across teams, products, and markets is a different challenge altogether.</p>
+      </div>
+
+      <figure>
+        <img src="featured-image.jpg" alt="Design system architecture and structure">
+        <figcaption>Design system: the bridge between strategy and execution</figcaption>
+      </figure>
+
+      <div class="article-content">
+        <h2>Why Design Systems Matter</h2>
+        <p>Organizations scaling from 10 to 100 designers face a fundamental problem: <strong>consistency breaks</strong>. Without a shared system, each designer interprets the brand differently. Components are rebuilt instead of reused. Documentation lives in five different places. New products fragment the visual identity.</p>
+        <p>A mature design system solves this by establishing:</p>
+        <ul>
+          <li><strong>Single source of truth</strong> for components, patterns, and tokens</li>
+          <li><strong>Shared vocabulary</strong> between product, design, and engineering teams</li>
+          <li><strong>Efficiency gains</strong> through reuse instead of rebuilding</li>
+          <li><strong>Brand consistency</strong> across all products and touchpoints</li>
+          <li><strong>Speed to market</strong> for new features and products</li>
+        </ul>
+
+        <h2>The Three Layers of a Scalable System</h2>
+        <p>The best design systems operate on three interconnected layers:</p>
+
+        <h3>1. Design Tokens (The Foundation)</h3>
+        <p>Design tokens are the atomic values—colors, typography, spacing, shadow, radius—that define how your system looks and feels. Instead of hardcoding hex values or pixel measurements, tokens make these values programmable and reusable.</p>
+        <p><strong>Why this matters:</strong> When brand guidelines change (a new primary color, revised typography scale), updating tokens cascades across every product. A single file change instead of hunting through hundreds of component files.</p>
+        <p>Tokens should be organized hierarchically:</p>
+        <ul>
+          <li><strong>Core tokens:</strong> base values (e.g., `color-primary: #0066FF`)</li>
+          <li><strong>Semantic tokens:</strong> contextual mappings (e.g., `button-background-primary: color-primary`)</li>
+          <li><strong>Component tokens:</strong> specific overrides (e.g., `button-hover-state-primary: color-dark-primary`)</li>
+        </ul>
+
+        <h3>2. Component Library (The Building Blocks)</h3>
+        <p>Components are the reusable UI elements: buttons, inputs, modals, cards, tables. Each component should be:</p>
+        <ul>
+          <li><strong>Well-documented</strong> with usage guidelines and edge cases</li>
+          <li><strong>Fully specified</strong> with all states (default, hover, active, disabled, error)</li>
+          <li><strong>Tested</strong> across browsers and devices</li>
+          <li><strong>Accessible</strong> with proper ARIA labels and keyboard navigation</li>
+          <li><strong>Backed by code</strong> (shipped as actual React/Vue/Web Components, not just Figma mockups)</li>
+        </ul>
+
+        <div class="highlight">
+          <p><strong>Critical insight:</strong> A design system only scales if the components are maintained in code. Figma components are a design reference, but the source of truth must be the shipped code.</p>
+        </div>
+
+        <h3>3. Governance (The Rules)</h3>
+        <p>Governance defines who decides what goes into the system and how it evolves. Without clear governance, design systems become political battlegrounds.</p>
+        <p>Effective governance includes:</p>
+        <ul>
+          <li><strong>Contribution guidelines</strong> — How new components or tokens are proposed and reviewed</li>
+          <li><strong>Deprecation policy</strong> — How old components are retired without breaking products</li>
+          <li><strong>Release cadence</strong> — Predictable updates so teams can plan migrations</li>
+          <li><strong>Cross-team representation</strong> — Steering committee with design, engineering, and product voices</li>
+          <li><strong>Clear ownership</strong> — Who maintains the system day-to-day?</li>
+        </ul>
+
+        <h2>Scaling Across Products & Markets</h2>
+        <p>Once the foundation is solid, the next challenge is customization. Spotify's design system needs to work on web, mobile, TV, and wearables. Airbnb's system needs variants for different markets with different visual expectations.</p>
+        <p><strong>The solution:</strong> Semantic tokens with context-aware overrides. Instead of creating entirely new component sets, you define how tokens adjust per platform or market:</p>
+        <ul>
+          <li>Mobile might use tighter spacing and larger touch targets</li>
+          <li>TV needs bigger font sizes and more breathing room</li>
+          <li>Different markets might have different color associations</li>
+        </ul>
+        <p>This requires sophisticated token architecture, but it pays off in consistency and maintainability.</p>
+
+        <h2>Real-World Example: Scaling From Startup to Enterprise</h2>
+        <p>Consider a fintech platform growing from 5 to 50 designers. At 5 designers, loose alignment works fine. At 50, it breaks completely.</p>
+        <p><strong>Stage 1 (Chaos):</strong> Each product team builds components independently. Same button coded three different ways. Color palette drifts. No documentation.</p>
+        <p><strong>Stage 2 (Consolidation):</strong> Extract shared components into a library. Establish design tokens. Document everything. This takes 2-3 months of focused work and buys you 6-12 months of alignment.</p>
+        <p><strong>Stage 3 (Governance):</strong> Formalize contribution process. Create a design systems team. Set up deprecation workflows. Now new products launch in weeks instead of months, with zero brand consistency issues.</p>
+
+        <h2>Common Mistakes That Kill Design Systems</h2>
+        <p><strong>❌ Treating the design system as a design-only problem.</strong> It lives in code. If engineering isn't involved from day one, it won't scale.</p>
+        <p><strong>❌ Over-specifying components.</strong> A button component with 47 variants is unmaintainable. Instead, use tokens to enable variation.</p>
+        <p><strong>❌ Ignoring adoption.** A beautiful design system that no one uses is waste. Invest in education and make adoption frictionless.</p>
+        <p><strong>❌ Centralizing all decisions.** Design systems teams become bottlenecks. Empower product teams to contribute and extend within guidelines.</p>
+        <p><strong>❌ Neglecting accessibility.** If components aren't accessible by default, you're shipping discrimination.</p>
+
+        <h2>The Future of Design Systems</h2>
+        <p>Design systems are evolving beyond component libraries. The next frontier is:</p>
+        <ul>
+          <li><strong>Programmatic design:</strong> Systems that generate variations automatically based on context</li>
+          <li><strong>AI-assisted governance:</strong> Tools that detect drift and flag inconsistencies</li>
+          <li><strong>Dynamic theming:</strong> Real-time token updates that propagate across all products</li>
+          <li><strong>Composable architectures:</strong> Systems built from smaller, reusable subsystems</li>
+        </ul>
+
+        <h2>Key Takeaway</h2>
+        <p>A design system is ultimately about trust—between designers and engineers, between teams and product leadership, between the brand and its users. Build systems with clarity of purpose, robust governance, and genuine cross-team collaboration. That's what enables startups to scale into enterprises without losing their soul.</p>
+
+        <div class="cta-section">
+          <p>Ready to build or scale your design system?</p>
+          <a href="../../#contact" class="cta-link">Let's collaborate</a>
+        </div>
+
+        <div class="related-articles">
+          <h3>Related articles</h3>
+          <div class="related-links">
+            <a href="../aigc-design-beyond-text-to-image/">AIGC Design: Beyond Text-to-Image</a>
+            <a href="../ai-emotions-neuroscience/">AI, Emotions & Neuroscience</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; font-size: 14px; color: #666;">
+        <h3 style="font-family: 'Unbounded'; font-size: 18px; margin-bottom: 1rem; color: #1a1a1a;">Credits</h3>
+        <p><strong>Featured image:</strong> Original design by Lucrezia Spapperi Gestri</p>
+        <p>Insights based on building and scaling design systems across enterprise organizations.</p>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    <p>luluu.mail@qq.com</p>
+  </footer>
+</body>
+</html>
