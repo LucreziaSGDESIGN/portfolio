@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Brand identity & digital strategy designer specializing in branding, AIGC, and product design for tech and consumer brands across Europe and China. Award-winning design practice.">
+<meta name="keywords" content="brand designer, brand identity, AIGC designer, digital strategy, UX/UI design, visual design, product design, design systems, cross-cultural design, branding agency">
+<meta name="author" content="Lucrezia Spapperi Gestri">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Lucrezia Spapperi Gestri — Brand & AIGC Designer | Award-Winning Design">
+<meta property="og:description" content="Brand identity, digital strategy, AIGC, and product design for global tech and consumer brands. 2x HONOR Design Award winner.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucreziasdesign.github.io/portfolio/">
+<meta property="og:image" content="https://lucreziasdesign.github.io/portfolio/assets/portrait.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lucrezia Spapperi Gestri — Brand & AIGC Designer">
+<meta name="twitter:description" content="Award-winning brand identity and digital strategy designer. Specializing in AIGC, design systems, and cross-cultural design.">
+<meta name="twitter:image" content="https://lucreziasdesign.github.io/portfolio/assets/portrait.png">
+<meta name="theme-color" content="#0d0d0d">
+<title>Lucrezia Spapperi Gestri — Brand & AIGC Designer | Branding & Digital Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;700;900&family=Archivo:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://lucreziasdesign.github.io/portfolio/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lucrezia Spapperi Gestri",
+  "url": "https://lucreziasdesign.github.io/portfolio/",
+  "image": "https://lucreziasdesign.github.io/portfolio/assets/portrait.png",
+  "jobTitle": "Brand & AIGC Designer",
+  "description": "Brand identity designer and digital strategist specializing in cross-cultural design, AIGC, and product design for tech and consumer brands across Europe and China.",
+  "knowsAbout": ["Brand Identity", "AIGC", "Digital Strategy", "Product Design", "Design Systems"],
+  "location": {"@type": "Place", "name": "Shenzhen, China / Florence, Italy"}
+}
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --black: #ebe2d2;
+  --white: #0d0d0d;
+  --off: #16140f;
+  --mid: #6b635a;
+  --dim: #a59a8a;
+  --border: rgba(235,226,210,0.10);
+  --border-strong: rgba(235,226,210,0.20);
+  --accent: #c9b889;
+  --red: #d4534f;
+  --radius: 4px;
+}
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: 'Archivo', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+  animation: grainShift 1.4s steps(6) infinite;
+}
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-3%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #050505;
+  color: #ebe2d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  transition: transform 0.8s cubic-bezier(0.7,0,0.2,1), opacity 0.3s;
+  opacity: 1;
+}
+.intro.is-out {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.intro-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 22px;
+}
+.intro-hello {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(20px, 3.2vw, 44px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 18ch;
+}
+.intro-hello em {
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+}
+.intro-count {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(36px, 7vw, 88px);
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.intro-bar {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+.intro-bar-fill {
+  height: 100%;
+  background: #ebe2d2;
+  width: 0%;
+  transition: width 0.15s linear;
+}
+.cur {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s, height 0.3s;
+}
+.cur.expand {
+  width: 60px;
+  height: 60px;
+  background: rgba(15,15,15,0.07);
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  padding: 0 32px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+@media (max-width: 560px) { nav { padding: 0 16px; } }
+.nav-logo {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--red);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-logo:hover { color: var(--black); }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+@media (max-width: 560px) { .nav-right { gap: 16px; } }
+.nav-right a {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-right a:hover { color: var(--black); }
+.nav-avail {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--black);
+}
+.nav-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1db954;
+  flex-shrink: 0;
+}
+.sec {
+  padding: 100px 32px;
+  background: var(--white);
+}
+@media (max-width: 560px) { .sec { padding: 60px 16px; } }
+h1, h2, h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(36px, 6.8vw, 108px); line-height: 1.1; }
+h2 { font-size: clamp(28px, 4vw, 64px); margin: 2rem 0 1rem 0; line-height: 1.2; }
+h3 { font-size: clamp(18px, 2vw, 28px); margin: 1.5rem 0 1rem 0; }
+p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--dim); }
+strong { color: var(--black); font-weight: 500; }
+em { font-style: italic; color: var(--mid); }
+a { color: var(--accent); text-decoration: underline; transition: color 0.2s; }
+a:hover { color: var(--red); }
+ul, ol { margin: 1.5rem 0 1.5rem 2rem; }
+li { margin-bottom: 0.8rem; }
+.hero {
+  min-height: 100vh;
+  padding: 96px 32px 40px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 560px) { .hero { padding: 72px 16px 32px !important; } }
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow .red { color: var(--red); }
+.hero-tagline {
+  font-size: clamp(18px, 1.8vw, 26px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--mid);
+  margin: 24px 0 0 0;
+  max-width: 28ch;
+}
+.footer-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 900px) { .footer-inline { grid-template-columns: 1fr 1fr; gap: 24px; } }
+@media (max-width: 560px) { .footer-inline { grid-template-columns: 1fr; gap: 16px; padding: 32px 16px; } }
+.footer-col { display: flex; flex-direction: column; gap: 8px; }
+.footer-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.footer-content { font-size: 14px; color: var(--black); line-height: 1.6; }
+.footer-email {
+  color: var(--black);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-email:hover { color: var(--red); }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGWDCPCMSD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PGWDCPCMSD');
+</script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="5RxzmGxYoNxtxCRqj1SjAQ" async></script>
+</head>
+<body>
+  <div class="intro">
+    <div class="intro-inner">
+      <h1 class="intro-hello">Welcome to my <em>design journey</em></h1>
+      <div class="intro-count">100%</div>
+    </div>
+    <div class="intro-bar">
+      <div class="intro-bar-fill"></div>
+    </div>
+  </div>
+
+  <div class="cur"></div>
+
+  <nav>
+    <a href="#hero" class="nav-logo">Lucrezia</a>
+    <div class="nav-right">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#awards">Awards</a>
+      <a href="blog/">Blog</a>
+      <a href="#contact">Contact</a>
+      <div class="nav-avail">
+        <div class="nav-dot"></div>
+        Open for Projects
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero">
+    <div class="hero-eyebrow">
+      <span><span class="red">BRAND</span> & AIGC DESIGNER</span>
+    </div>
+    <h1>Hi, I'm <strong>Lucrezia Spapperi Gestri</strong></h1>
+    <p class="hero-tagline">I craft identities that travel across cultures — bridging European design rigor with Asian market dynamics to create brands that resonate globally.</p>
+    <p style="margin-top: 24px; color: var(--mid); font-size: 12px;">Est. 2021 / Florence, Italy & Shenzhen, China</p>
+  </section>
+
+  <section id="about" class="sec">
+    <h2>About</h2>
+    <div style="max-width: 800px;">
+      <p><strong>Brand identity and digital strategy designer</strong> based between Florence and Shenzhen. I work with ambitious tech companies, luxury brands, and startups to build identities and digital products that resonate globally.</p>
+
+      <p>I specialize in <strong>cross-cultural design</strong>—understanding how a brand can maintain coherence while respecting local contexts. Whether it's adapting a European aesthetic for Asian markets or bringing Eastern market insights to Western brands, I see the intersection as opportunity.</p>
+
+      <h3>Expertise</h3>
+      <ul>
+        <li>Brand Identity & Strategy</li>
+        <li>Digital Strategy</li>
+        <li>AIGC Design & Integration</li>
+        <li>Product Design & UX/UI</li>
+        <li>Design Systems</li>
+        <li>Cross-cultural Design</li>
+      </ul>
+
+      <h3>Recent Focus</h3>
+      <p>AIGC integration into brand design, design systems for scale, and digital strategy for complex B2B products.</p>
+    </div>
+  </section>
+
+  <section id="awards" class="sec">
+    <h2>Recognition</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div style="border: 1px solid var(--border); padding: 24px; border-radius: 8px;">
+        <div style="font-size: 24px; margin-bottom: 12px;">⭐</div>
+        <h3 style="margin: 0;">HONOR 2024</h3>
+        <p style="margin: 4px 0; font-size: 12px;">Wallpaper Category</p>
+      </div>
+      <div style="border: 1px solid var(--border); padding: 24px; border-radius: 8px;">
+        <div style="font-size: 24px; margin-bottom: 12px;">⭐</div>
+        <h3 style="margin: 0;">HONOR 2025</h3>
+        <p style="margin: 4px 0; font-size: 12px;">AIGC Innovation Category</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec">
+    <h2>Let's Work Together</h2>
+    <div style="max-width: 800px;">
+      <p><strong>Email:</strong> <a href="mailto:luluu.mail@qq.com">luluu.mail@qq.com</a></p>
+      <p><strong>Based:</strong> Florence, Italy / Shenzhen, China</p>
+      <p><strong>Available For:</strong> Brand Strategy, Product Design, AIGC Integration, Digital Strategy</p>
+
+      <p style="margin-top: 2rem;">I'm currently open for strategic projects. Whether you're building a new brand, redesigning a digital product, or integrating AIGC into your creative process — let's explore how we can work together.</p>
+
+      <p><strong>Response time:</strong> Usually within 24-48 hours.</p>
+    </div>
+  </section>
+
+  <footer class="footer-inline">
+    <div class="footer-col">
+      <div class="footer-label">Email</div>
+      <a href="mailto:luluu.mail@qq.com" class="footer-email">luluu.mail@qq.com</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-label">Social</div>
+      <div class="footer-content">
+        <a href="https://www.linkedin.com/in/lucrezia-gestri-spapperi" target="_blank">LinkedIn</a> •
+        <a href="https://instagram.com/lucrezia" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-label">Based</div>
+      <div class="footer-content">Florence & Shenzhen</div>
+    </div>
+  </footer>
+
+  <script>
+    // INTRO LOADER — simplified
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const intro = document.querySelector('.intro');
+        if (intro) intro.classList.add('is-out');
+      }, 1200);
+    });
+
+    // LOADING BAR
+    const introBar = document.querySelector('.intro-bar-fill');
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.random() * 40;
+      if (progress > 100) progress = 100;
+      if (introBar) introBar.style.width = progress + '%';
+      if (progress === 100) clearInterval(interval);
+    }, 150);
+
+    // CUSTOM CURSOR
+    const cur = document.querySelector('.cur');
+    let mouseX = 0, mouseY = 0;
+    let curX = 0, curY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    function updateCursor() {
+      curX += (mouseX - curX) * 0.15;
+      curY += (mouseY - curY) * 0.15;
+      cur.style.left = curX + 'px';
+      cur.style.top = curY + 'px';
+      requestAnimationFrame(updateCursor);
+    }
+    updateCursor();
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cur.classList.add('expand'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('expand'));
+    });
+  </script>
+</body>
+</html>
