@@ -17,4 +17,4 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
-Sitemap: https://lucreziasdesign.github.io/portfolio/sitemap.xml
+Sitemap: https://lucreziasgdesign.github.io/portfolio/sitemap.xml
