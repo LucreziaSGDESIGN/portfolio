@@ -1,16 +1,13 @@
-# Allow all search engines to crawl your site
 User-agent: *
 Allow: /
 
-# Specific rules for better crawling
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-# Sitemap location
-Sitemap: https://lucreziasdesign.github.io/portfolio/sitemap.xml
+User-agent: Bingbot
+Allow: /
 
-# Block bad bots
 User-agent: MJ12bot
 Disallow: /
 
@@ -19,3 +16,5 @@ Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
+
+Sitemap: https://lucreziasdesign.github.io/portfolio/sitemap.xml
